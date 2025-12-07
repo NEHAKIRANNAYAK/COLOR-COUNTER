@@ -1,4 +1,4 @@
-Grade Color Counter
+🌸 Grade Color Counter 🌸
 
 The Grade Color Counter is a lightweight web tool designed to simplify the process of issuing color-coded cards based on student grade levels. This task is commonly done manually, which often leads to miscounts and lost time. I created this application to make the workflow more efficient, accurate, and pleasant to use.
 
