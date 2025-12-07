@@ -20,7 +20,7 @@
       border-radius: 24px;
       box-shadow: 0 20px 44px rgba(0,0,0,0.18);
       padding: 2.6rem 3rem;
-      width: 680px;
+      width: 700px;
       max-width: 100%;
     }
 
@@ -53,7 +53,7 @@
       text-align: right;
     }
 
-    /* BIG FLOWER BUTTONS ROW */
+    /* Flower Buttons */
     .buttons {
       display: flex;
       justify-content: space-between;
@@ -87,21 +87,18 @@
     .color-btn span.grade {
       font-size: 1rem;
       font-weight: 600;
-      opacity: 0.95;
       margin-top: 4px;
     }
 
-    /* Hover bloom effect */
     .color-btn:hover {
       transform: scale(1.08) translateY(-4px);
       box-shadow: 0 18px 34px rgba(0,0,0,0.32);
       filter: brightness(1.05);
     }
 
-    /* Click bloom pulse animation */
     @keyframes bloomPulse {
-      0%   { transform: scale(1); }
-      40%  { transform: scale(1.14); }
+      0% { transform: scale(1); }
+      40% { transform: scale(1.14); }
       100% { transform: scale(1); }
     }
 
@@ -109,7 +106,7 @@
       animation: bloomPulse 0.28s ease-out;
     }
 
-    /* Undo / Reset row */
+    /* Undo / Reset */
     .actions {
       display: flex;
       gap: 0.8rem;
@@ -135,7 +132,7 @@
       box-shadow: 0 3px 8px rgba(0,0,0,0.22);
     }
 
-    /* Output / copy area */
+    /* Output */
     .output-box {
       background: #faf7ff;
       border-radius: 14px;
@@ -188,96 +185,112 @@
       color: #777;
     }
 
-    /* MANAGE BUTTONS PANEL */
-    .editor-box {
-      margin-top: 1.4rem;
-      padding: 1.1rem 1.3rem;
-      border-radius: 14px;
-      border: 1px dashed #cbd5f5;
-      background: #f9fafb;
+    /* Toggle for manage section */
+    #toggleManageBtn {
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
+      width: 100%;
+      border-radius: 999px;
+      border: none;
+      background: #3c256b;
+      color: #fff;
       font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+    }
+
+    /* Manage Buttons panel: same bg/border as output box */
+    #manageBox {
+      margin-top: 1.2rem;
+      background: #faf7ff;
+      border-radius: 14px;
+      border: 1px solid #e0d7ff;
+      padding: 1.2rem 1.4rem;
     }
 
     .editor-title {
       font-weight: 700;
-      margin-bottom: 0.6rem;
-      color: #374151;
-    }
-
-    .editor-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .editor-column {
-      flex: 1;
-      min-width: 220px;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: #3c256b;
     }
 
     .editor-subtitle {
       font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 0.8rem;
       margin-bottom: 0.35rem;
       color: #4b5563;
     }
 
-    .editor-column label {
-      display: block;
-      margin-top: 0.4rem;
-      font-size: 0.85rem;
-      color: #6b7280;
+    .editor-field-group {
+      margin-bottom: 0.5rem;
     }
 
-    .editor-column input,
-    .editor-column select {
+    #manageBox label {
+      display: block;
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-bottom: 0.2rem;
+    }
+
+    #manageBox input,
+    #manageBox select {
       width: 100%;
-      margin-top: 0.2rem;
-      padding: 0.45rem 0.7rem;
       border-radius: 999px;
       border: 1px solid #d1d5db;
+      padding: 0.45rem 0.7rem;
       font-size: 0.9rem;
       font-family: inherit;
       outline: none;
+      box-sizing: border-box;
     }
 
-    .editor-column input:focus,
-    .editor-column select:focus {
-      border-color: #6366f1;
-      box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.4);
-    }
-
-    .editor-column input[type="color"] {
-      padding: 0;
+    #manageBox input[type="color"] {
       height: 2.1rem;
+      padding: 0;
       cursor: pointer;
+    }
+
+    #manageBox input:focus,
+    #manageBox select:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 1px rgba(99,102,241,0.4);
     }
 
     .editor-buttons-row {
       display: flex;
       gap: 0.5rem;
       margin-top: 0.6rem;
-      flex-wrap: wrap;
     }
 
     .editor-button {
-      padding: 0.5rem 0.9rem;
       border-radius: 999px;
       border: none;
-      background: #4f46e5;
       color: #fff;
       font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 3px 8px rgba(79, 70, 229, 0.35);
+      padding: 0.75rem 0;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.18);
     }
 
-    .editor-button.danger {
+    .editor-button.update {
+      background: #4f46e5;
+      width: 50%;
+    }
+
+    .editor-button.delete {
       background: #dc2626;
-      box-shadow: 0 3px 8px rgba(220, 38, 38, 0.35);
+      width: 50%;
     }
 
-    .editor-button:active {
-      transform: scale(0.97);
+    .editor-button.add {
+      background: #0d6efd;
+      width: 100%;
+      margin-top: 0.6rem;
     }
 
     @media (max-width: 720px) {
@@ -310,7 +323,7 @@
     </div>
   </div>
 
-  <!-- Flower buttons container (filled by JS) -->
+  <!-- Flower buttons container -->
   <div class="buttons" id="buttonsContainer"></div>
 
   <div class="actions">
@@ -327,64 +340,70 @@
     <div class="editable-hint">You can edit this text before copying.</div>
   </div>
 
-  <!-- Manage Buttons / Editor -->
-  <div class="editor-box">
+  <button id="toggleManageBtn">Hide Manage Buttons</button>
+
+  <div id="manageBox">
     <div class="editor-title">Manage Buttons</div>
 
-    <!-- EDIT EXISTING SECTION -->
-    <div class="editor-row">
-      <div class="editor-column">
-        <div class="editor-subtitle">Edit existing button</div>
+    <!-- Edit existing -->
+    <div class="editor-subtitle">Edit existing button</div>
 
-        <label for="editSelect">Select button</label>
-        <select id="editSelect"></select>
-
-        <label for="editLabel">New label (e.g. Blue (Grade 4))</label>
-        <input id="editLabel" type="text" placeholder="New label">
-
-        <label for="editColor">Color</label>
-        <input id="editColor" type="color" value="#8a2be2">
-
-        <div class="editor-buttons-row">
-          <button class="editor-button" id="editSaveBtn">Update Button</button>
-          <button class="editor-button danger" id="deleteBtn">Delete Button</button>
-        </div>
-      </div>
+    <div class="editor-field-group">
+      <label for="editSelect">Select button</label>
+      <select id="editSelect"></select>
     </div>
 
-    <hr style="border:none;height:1px;background:#e5e7eb;margin:1.2rem 0;">
-
-    <!-- ADD NEW SECTION -->
-    <div class="editor-row">
-      <div class="editor-column">
-        <div class="editor-subtitle">Add new button</div>
-
-        <label for="addLabel">Label (e.g. Blue (Grade 4))</label>
-        <input id="addLabel" type="text" placeholder="Blue (Grade 4)">
-
-        <label for="addColor">Color</label>
-        <input id="addColor" type="color" value="#00aaff">
-
-        <button class="editor-button" id="addBtn">Add Button</button>
-      </div>
+    <div class="editor-field-group">
+      <label for="editLabel">New label (e.g. Blue (Grade 4))</label>
+      <input id="editLabel" type="text" placeholder="New label">
     </div>
+
+    <div class="editor-field-group">
+      <label for="editColor">Color</label>
+      <input id="editColor" type="color" value="#d447a6">
+    </div>
+
+    <div class="editor-buttons-row">
+      <button class="editor-button update" id="editSaveBtn">Update Button</button>
+      <button class="editor-button delete" id="deleteBtn">Delete Button</button>
+    </div>
+
+    <!-- Add new -->
+    <div class="editor-subtitle">Add new button</div>
+
+    <div class="editor-field-group">
+      <label for="addLabel">Label (e.g. Blue (Grade 4))</label>
+      <input id="addLabel" type="text" placeholder="Blue (Grade 4)">
+    </div>
+
+    <div class="editor-field-group">
+      <label for="addColor">Color</label>
+      <input id="addColor" type="color" value="#00aaff">
+    </div>
+
+    <button class="editor-button add" id="addBtn">Add Button</button>
   </div>
 </div>
 
 <script>
-  const STORE = "buttons_state_v2";
+  const STORE = "grade_color_counter_v1";
 
   let state = {
     buttons: [
-      { id: "purple", label: "Purple (Grade K)", color: "#8a2be2", count: 0 },
-      { id: "pink",   label: "Pink (Grade 2)",   color: "#ff69b4", count: 0 },
-      { id: "orange", label: "Orange (Grade 3)", color: "#ff8c00", count: 0 }
+      { id: "pink",   label: "Pink (Grade 2)",   color: "#d447a6", count: 0 },
+      { id: "orange", label: "Orange (Grade 3)", color: "#ff8c00", count: 0 },
+      { id: "purple", label: "Purple (Grade K)", color: "#8a2be2", count: 0 }
     ],
     lastClickedId: null
   };
 
   const buttonsContainer = document.getElementById("buttonsContainer");
   const outputEl = document.getElementById("output");
+  const undoBtn = document.getElementById("undoBtn");
+  const resetBtn = document.getElementById("resetBtn");
+  const copyBtn = document.getElementById("copyBtn");
+  const toggleManageBtn = document.getElementById("toggleManageBtn");
+  const manageBox = document.getElementById("manageBox");
 
   const editSelect = document.getElementById("editSelect");
   const editLabelInput = document.getElementById("editLabel");
@@ -408,22 +427,19 @@
       if (Array.isArray(data.buttons) && data.buttons.length > 0) {
         state.buttons = data.buttons;
       }
-      if (data.lastClickedId) state.lastClickedId = data.lastClickedId;
+      state.lastClickedId = data.lastClickedId || null;
     } catch (e) {
-      console.error("Error loading state:", e);
+      console.error("Error loading state", e);
     }
   }
 
-  function getBaseName(label) {
+  function baseName(label) {
     const idx = label.indexOf("(");
-    if (idx === -1) return label.trim();
-    return label.slice(0, idx).trim();
+    return idx === -1 ? label.trim() : label.slice(0, idx).trim();
   }
 
   function updateOutput() {
-    const lines = state.buttons.map(btn => {
-      return `${getBaseName(btn.label)}: ${btn.count}`;
-    });
+    const lines = state.buttons.map(b => `${baseName(b.label)}: ${b.count}`);
     outputEl.textContent = lines.join("\n");
     saveState();
   }
@@ -438,97 +454,83 @@
 
   function renderButtons() {
     buttonsContainer.innerHTML = "";
-    state.buttons.forEach(btn => {
-      const el = document.createElement("button");
-      el.className = "color-btn";
-      el.id = btn.id;
-      el.style.background = btn.color;
+    state.buttons.forEach(b => {
+      const btn = document.createElement("button");
+      btn.id = b.id;
+      btn.className = "color-btn";
+      btn.style.background = b.color;
 
-      const base = getBaseName(btn.label);
-      const gradePartMatch = btn.label.match(/\(([^)]+)\)/);
-      const gradeText = gradePartMatch ? `(${gradePartMatch[1]})` : "";
+      const gradeMatch = b.label.match(/\(([^)]+)\)/);
+      const gradeText = gradeMatch ? gradeMatch[1] : "";
 
-      el.innerHTML = `
-        <span>${base}</span>
-        ${gradeText ? `<span class="grade">${gradeText}</span>` : ""}
-      `;
+      btn.innerHTML =
+        `<span>${baseName(b.label)}</span>` +
+        (gradeText ? `<span class="grade">(${gradeText})</span>` : "");
 
-      el.addEventListener("click", () => {
-        const target = state.buttons.find(b => b.id === btn.id);
-        if (!target) return;
-        target.count += 1;
-        state.lastClickedId = btn.id;
+      btn.addEventListener("click", () => {
+        b.count++;
+        state.lastClickedId = b.id;
         updateOutput();
-        bloom(btn.id);
+        bloom(b.id);
       });
 
-      buttonsContainer.appendChild(el);
+      buttonsContainer.appendChild(btn);
     });
   }
 
   function populateEditor() {
     editSelect.innerHTML = "";
-    state.buttons.forEach(btn => {
+    state.buttons.forEach(b => {
       const opt = document.createElement("option");
-      opt.value = btn.id;
-      opt.textContent = btn.label;
+      opt.value = b.id;
+      opt.textContent = b.label;
       editSelect.appendChild(opt);
     });
 
     if (state.buttons.length > 0) {
-      const selected = state.buttons[0];
-      editSelect.value = selected.id;
-      editLabelInput.value = selected.label;
-      editColorInput.value = selected.color;
-    } else {
-      editLabelInput.value = "";
-      editColorInput.value = "#8a2be2";
+      const first = state.buttons[0];
+      editSelect.value = first.id;
+      editLabelInput.value = first.label;
+      editColorInput.value = first.color;
     }
   }
 
   editSelect.addEventListener("change", () => {
-    const id = editSelect.value;
-    const btn = state.buttons.find(b => b.id === id);
-    if (!btn) return;
-    editLabelInput.value = btn.label;
-    editColorInput.value = btn.color;
+    const btnState = state.buttons.find(b => b.id === editSelect.value);
+    if (!btnState) return;
+    editLabelInput.value = btnState.label;
+    editColorInput.value = btnState.color;
   });
 
   editSaveBtn.addEventListener("click", () => {
     const id = editSelect.value;
-    const btn = state.buttons.find(b => b.id === id);
-    if (!btn) return;
+    const btnState = state.buttons.find(b => b.id === id);
+    if (!btnState) return;
     const newLabel = editLabelInput.value.trim();
-    const newColor = editColorInput.value || btn.color;
-    if (newLabel) btn.label = newLabel;
-    btn.color = newColor;
-    saveState();
+    const newColor = editColorInput.value || btnState.color;
+    if (newLabel) btnState.label = newLabel;
+    btnState.color = newColor;
     renderButtons();
-    updateOutput();
     populateEditor();
+    updateOutput();
+    saveState();
   });
 
-  // DELETE BUTTON
   deleteBtn.addEventListener("click", () => {
     if (state.buttons.length <= 1) {
-      alert("You must have at least one button. Cannot delete the last one.");
+      alert("You must have at least one button.");
       return;
     }
     const id = editSelect.value;
-    const btn = state.buttons.find(b => b.id === id);
-    if (!btn) return;
-
-    const confirmDelete = confirm(`Delete "${btn.label}"? This will remove its button and count.`);
-    if (!confirmDelete) return;
-
+    const btnState = state.buttons.find(b => b.id === id);
+    if (!btnState) return;
+    if (!confirm(`Delete "${btnState.label}"?`)) return;
     state.buttons = state.buttons.filter(b => b.id !== id);
-    if (state.lastClickedId === id) {
-      state.lastClickedId = null;
-    }
-    saveState();
+    if (state.lastClickedId === id) state.lastClickedId = null;
     renderButtons();
     populateEditor();
     updateOutput();
+    saveState();
   });
 
   addBtn.addEventListener("click", () => {
@@ -538,42 +540,54 @@
     const id = "btn_" + Date.now();
     state.buttons.push({ id, label, color, count: 0 });
     addLabelInput.value = "";
-    saveState();
     renderButtons();
-    updateOutput();
     populateEditor();
+    updateOutput();
+    saveState();
   });
 
-  document.getElementById("undoBtn").onclick = () => {
+  undoBtn.addEventListener("click", () => {
     const id = state.lastClickedId;
     if (!id) return;
-    const btn = state.buttons.find(b => b.id === id);
-    if (btn && btn.count > 0) {
-      btn.count -= 1;
+    const btnState = state.buttons.find(b => b.id === id);
+    if (btnState && btnState.count > 0) {
+      btnState.count--;
     }
     state.lastClickedId = null;
     updateOutput();
-  };
+  });
 
-  document.getElementById("resetBtn").onclick = () => {
-    state.buttons.forEach(btn => (btn.count = 0));
+  resetBtn.addEventListener("click", () => {
+    state.buttons.forEach(b => (b.count = 0));
     state.lastClickedId = null;
     updateOutput();
-  };
+  });
 
-  document.getElementById("copyBtn").onclick = async () => {
+  copyBtn.addEventListener("click", async () => {
     const text = outputEl.innerText.trim();
     try {
       await navigator.clipboard.writeText(text);
-      const btn = document.getElementById("copyBtn");
-      const old = btn.textContent;
-      btn.textContent = "Copied!";
-      setTimeout(() => (btn.textContent = old), 1200);
-    } catch (e) {
+      const oldText = copyBtn.textContent;
+      copyBtn.textContent = "Copied!";
+      setTimeout(() => (copyBtn.textContent = oldText), 1200);
+    } catch {
       alert("Could not copy. You can select and copy manually.");
     }
-  };
+  });
 
+  // show/hide manage panel
+  toggleManageBtn.addEventListener("click", () => {
+    const isHidden = manageBox.style.display === "none";
+    if (isHidden) {
+      manageBox.style.display = "block";
+      toggleManageBtn.textContent = "Hide";
+    } else {
+      manageBox.style.display = "none";
+      toggleManageBtn.textContent = "Manage Buttons";
+    }
+  });
+
+  // clock
   function updateClock() {
     const now = new Intl.DateTimeFormat("en-US", {
       hour: "numeric",
